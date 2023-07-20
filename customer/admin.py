@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Customer
 
 class customerAdmin(admin.ModelAdmin):
-    list_display=("firstName", "lastName", "phone_number", "adress","email")
+    list_display=("first_name", "last_name", "phone_number", "address","email")
     
 
 

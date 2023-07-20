@@ -1,10 +1,9 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User# Create your models here.
 class Customer(models.Model):
-    firstName=models.CharField(max_length=32)
-    lastName=models.CharField(max_length=32)
-    phone_number = models.CharField(max_length=32)
-    email = models.EmailField()
-    adress=models.CharField(max_length=32)
-
+    user=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
+    first_name=models.CharField(max_length=32)
+    last_name=models.CharField(max_length=32)
+    phone_number=models.CharField(max_length=10)
+    email=models.EmailField()
+    address=models.CharField(max_length=32)
