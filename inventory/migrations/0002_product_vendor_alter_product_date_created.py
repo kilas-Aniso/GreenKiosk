@@ -22,4 +22,5 @@ class Migration(migrations.Migration):
             name='date_created',
             field=models.DateTimeField(auto_now_add=True),
         ),
+        
     ]
