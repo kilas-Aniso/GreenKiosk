@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product_list</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
+    <style>
+        .product-name{
+            color:rgb(232, 36, 209);
+        }
+        .allproducts{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5%;
+            margin: 0% 5%;
+        }
+        .product-container{
+            text-align: center;
+            border-style: solid;
+            border-color: rgb(232, 36, 209);
+      
+        }
+
+        .h1{
+            text-align: center;
+            color:rgb(232, 36, 209);
+        }
+        .viewDetails{
+            padding: 7px 12px;
+            margin-bottom: 2%;
+            background-color:rgb(232, 36, 209) ;
+        
+        }
+        .a{
+            color: #ffffff;
+        }
+    </style>
+    <h1 class="h1">Product Section</h1>
     <div class="allproducts">
         {% for product in products %}
             <div class="product-container">
                 <img src="{{product.image.url}}" class="img"/>
                 <h1 class="product-name">{{ product.name }}</h1>     
-             <a href="{% url 'product_detail_view' id=product.id %}">View Details</a>
+          <button class="viewDetails"><a href="{% url 'product_detail_view' id=product.id %}">View Details</a></button>   
     
             </div>
         {% endfor %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Add your custom styles here */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .cart-container {
+        margin: 20px;
+    }
+    .cart-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+    .cart-item img {
+        max-width: 50px;
+        margin-right: 10px;
+    }
+    .custom-button {
+        display: inline-block;
+        background-color: #26c95c;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .custom-button:hover{
+        background-color: rgb(153, 54, 54);
+    }
+    ul li {
+    list-style: none;
+    
+}
+
+
+</style>
+<body>
+    <h1>Cart Page</h1>
+<ul>
+    {% for cart_item in cart_items %}
+    <li>  <img src="{{cart_item.image.url}}" alt="{{cart_item.name}}" width="50"><br><br>
+          Product: {{ cart_item.products }}<br><br>
+          Price: {{cart_item.product }}<br><br>
+          Quantity: {{cart_item.quantity }}<br><br>
+          Date_added: {{cart_item.date_added}}<br><br>
+    </li>
+    <a href="{% url 'place_order' %}" class="custom-button">Place Order</a>
+
+    {% endfor %}
+</ul>
+</body>
+</html>

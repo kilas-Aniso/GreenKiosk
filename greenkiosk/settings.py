@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'inventory',
     'customer',
     'feedback',
-    'payments',
+    'payment',
     'cart',
     'notification',
     'order',

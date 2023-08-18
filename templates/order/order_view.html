@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+     body {
+            font-family: Arial, sans-serif;
+        }
+        .order-view-container {
+            margin: 20px;
+            /* text-align: center; */
+        }
+        .order-list {
+            list-style: none;
+            padding: 0;
+        }
+        .order-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .order-item a {
+            display: inline-block;
+            background-color: #2edd63;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+</style>
+<body>
+    <div class="order-view-container">
+        <h1>Order View Page</h1>
+        <ul class="order-list">
+            {% for order in orders %}
+            <li class="order-item">
+            Order Status: {{ order.order_status}}<br>
+            Delivery: ${{ order.delivery }}<br>
+            Payment Details: {{ order.payment_details }}<br>
+            
+            
+            {% if order.order_status != 'PAID' %}
+            <a href="{% url 'process_payment' order.id %}" class="custome_button">Process Payment</a>
+            
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

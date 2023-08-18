@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+        }
+        .order-form-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .order-form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 400px; 
+        }
+        .order-form h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .order-form form {
+            display: inline-block;
+            text-align: left;
+        }
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .order-form input[type="text"],
+        .order-form input[type="number"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .order-form button {
+            background-color: #1add3a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>  
+          
+</head>
+
+<body>
+    <div class="order-form-container">
+        <div class="order-form">
+            <h1 class="heading">Order Page</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Order</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
