@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'inventory',
     'customer',
     'feedback',
-    'payment',
     'cart',
     'notification',
     'order',
@@ -50,6 +49,9 @@ INSTALLED_APPS = [
     'vendor',
     'categories',
     'delivery',
+    'rest_framework',
+    'api',
+    'drf_yasg',
 
 ]
 

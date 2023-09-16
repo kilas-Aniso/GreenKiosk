@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1aad5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading {
+            color: #ff00ae; /* Your desired color */
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-field {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #ff00ae; /* Your desired color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #d1008f; /* Slightly darker shade for hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Add a Feedback</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="{{ form.feedback_content.id_for_label }}">Feedback Content:</label>
+                {{ form.feedback_content }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.user_image.id_for_label }}">User Image:</label>
+                {{ form.user_image }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.ratings.id_for_label }}">Ratings:</label>
+                {{ form.ratings }}
+            </div>
+            <div class="form-field">
+                <label for="{{ form.Feedback_status.id_for_label }}">Feedback Status:</label>
+                {{ form.Feedback_status }}
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>

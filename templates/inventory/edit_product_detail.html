@@ -3,12 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Edit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .edit-form {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .edit-form h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ff00ae; 
+        }
+
+        .edit-form form {
+            text-align: left;
+        }
+
+        .edit-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .edit-form input[type="text"],
+        .edit-form input[type="number"],
+        .edit-form textarea {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .edit-form button[type="submit"] {
+            background-color: #ff00ae; 
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .edit-form button[type="submit"]:hover {
+            background-color: #600644; 
+        }
+    </style>
 </head>
 <body>
-     <form method="post" class="upload_form">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button type="submit">Save</button>    </form>
+    <div class="form-container">
+        <div class="edit-form">
+            <h1>Edit Product</h1>
+            <form method="post" class="upload_form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

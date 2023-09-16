@@ -6,44 +6,14 @@
     <title>Document</title>
 </head>
 <style>
-    /* Add your custom styles here */
-    body {
-        font-family: Arial, sans-serif;
-    }
-    .cart-container {
-        margin: 20px;
-    }
-    .cart-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-    .cart-item img {
-        max-width: 50px;
-        margin-right: 10px;
-    }
-    .custom-button {
-        display: inline-block;
-        background-color: #26c95c;
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .custom-button:hover{
-        background-color: rgb(153, 54, 54);
-    }
-    ul li {
-    list-style: none;
-    
-}
-
 
 </style>
 <body>
+    <style>
+        h1{
+            color:  #ff00ae;
+        }
+    </style>
     <h1>Cart Page</h1>
 <ul>
     {% for cart_item in cart_items %}

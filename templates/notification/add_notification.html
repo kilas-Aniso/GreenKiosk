@@ -4,14 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1aad5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .upload_form {
+            width: 400px;
+            padding: 20px;
+            background-color:#d8b9e7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .upload_form h1 {
+            color: blue;
+        }
+
+        .upload_form button[type="submit"] {
+            background-color: #ff00ae; /* Your desired color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .upload_form button[type="submit"]:hover {
+            background-color: #d1008f; /* Slightly darker shade for hover */
+        }
+
+        .notification {
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #ffd700; /* Notification background color */
+            color: #000; /* Notification text color */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div class="upload_form">
+        <h1>Upload a new product</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
 
-    <h1 style="color: blue;">Upload a new product</h1>
-<form method="POST" action class="upload_form">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Save</button>
-</form>
+
 </body>
 </html>
